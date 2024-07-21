@@ -28,7 +28,7 @@ This is a simple CRUD (Create, Read, Update, Delete) API built with Node.js for 
 
    ```bash
    git clone https://github.com/evertonrocha2/crud-node
-   cd car-dealership-api```
+   cd car-dealership-api
 
 Install dependencies:
 
