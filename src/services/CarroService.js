@@ -29,4 +29,19 @@ module.exports = {
       );
     });
   },
+  updateCar: (code, model, placa) => {
+    return new Promise((resolve, reject) => {
+      db.query(
+        "UPDATE carros SET modelo = ?, placa = ? WHERE codigo = ?",
+        [model, placa, code],
+        (err, res) => {
+          if (err) {
+            reject(err);
+            return;
+          }
+          resolve(res.affectedRows);
+        }
+      );
+    });
+  },
 };
