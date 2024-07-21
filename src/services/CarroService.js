@@ -9,4 +9,12 @@ module.exports = {
       });
     });
   },
+  getById: (id) => {
+    return new Promise((resolve, reject) => {
+      db.query("SELECT * FROM carros WHERE codigo = ?", [id], (err, res) => {
+        if (err) reject(err);
+        resolve(res);
+      });
+    });
+  },
 };
