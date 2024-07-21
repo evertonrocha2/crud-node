@@ -17,4 +17,16 @@ module.exports = {
       });
     });
   },
+  insertCar: (model, placa) => {
+    return new Promise((resolve, reject) => {
+      db.query(
+        "INSERT INTO carros (modelo, placa) VALUES (?, ?)",
+        [model, placa],
+        (err, res) => {
+          if (err) reject(err);
+          resolve(res.insertId);
+        }
+      );
+    });
+  },
 };
