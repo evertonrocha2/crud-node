@@ -44,4 +44,12 @@ module.exports = {
       );
     });
   },
+  deleteCar: (code) => {
+    return new Promise((resolve, reject) => {
+      db.query("DELETE FROM carros WHERE codigo = ?", [code], (err, res) => {
+        if (err) reject(err);
+        resolve(res.affectedRows);
+      });
+    });
+  },
 };
